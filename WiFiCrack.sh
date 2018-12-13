@@ -205,7 +205,7 @@ fi
 s="$( echo "$s" | sed '/^\s*$/d' )"
 
 printf "\n\n${GREENT}[+] ${NC}"
-read -p "Enter the number of the network you want to crack: " numberchoice
+read -p "Select a network to crack (1-$count): " numberchoice
 if [[ ! $numberchoice =~ ^[0-9]+$ ]] || [ "$numberchoice" == "0" ] || (( $numberchoice > $count )); then
   printf "${REDT}[!] ${NC}ERROR: Invalid input...\n"
   exit
