@@ -156,34 +156,19 @@ sudo airport -z
 
 printf "${BLUET}[*] ${NC}Scanning for Wi-Fi networks...\n"
 
-count=0
-while read line ; do
-    mac="$( echo "$line" | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' )"
-    mac="$( echo ${mac//[[:blank:]]/} )"
-    name="$( echo "$line" | sed "s/ *$mac.*//" )"
-    signal="$( echo "$line" | sed -n -e "s/^.*$mac //p" | sed 's/ .*//' )"
-    channel="$( echo "$line" | sed -n -e "s/^.*$signal  //p" | sed 's/ .*//' | sed 's/,.*//' )"
-s="$s
-$name~$mac~$signal~$channel"
-    count=$(($count + 1))
-done < <(sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s | tail -n +2)
-
-if [ -z "$s" ]; then
-  printf "${REDT}[!] ${NC}ERROR (airport failure): Please run WiFiCrack again...\n"
-  exit
-fi
-
-s="$( echo "$s" | sed '/^\s*$/d' | sort )"
-
-clear
-printf "${DUN}%-6s${NC} %-1s ${DUN}%-4s${NC} %-22s ${DUN}%-5s${NC} %-15s ${DUN}%-6s${NC} %-2s ${DUN}%-7s${NC}" "Number" "" "Name" "" "BSSID" "" "Signal" "" "Channel"
-
 count=1
-while read -r line; do
-  net="$( echo "$line" | sed 's/~.*//' )"
-  mad="$( echo "$line" | sed -n -e "s/^.*$net~//p" | sed 's/~.*//' )"
-  sig="$( echo "$line" | sed -n -e "s/^.*$mad~//p" | sed 's/~.*//' )"
-  chan="$( echo "$line" | sed -n -e "s/^.*$sig~//p" )"
+while read line ; do
+
+  if [ "$count" == "1" ]; then
+    clear
+    printf "${DUN}%-6s${NC} %-1s ${DUN}%-4s${NC} %-22s ${DUN}%-5s${NC} %-15s ${DUN}%-6s${NC} %-2s ${DUN}%-7s${NC}" "Number" "" "Name" "" "BSSID" "" "Signal" "" "Channel"
+  fi
+
+  mad="$( echo "$line" | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' )"
+  mad="$( echo ${mad//[[:blank:]]/} )"
+  net="$( echo "$line" | sed "s/ *$mad.*//" )"
+  sig="$( echo "$line" | sed -n -e "s/^.*$mad //p" | sed 's/ .*//' )"
+  chan="$( echo "$line" | sed -n -e "s/^.*$sig  //p" | sed 's/ .*//' | sed 's/,.*//' )"
 
   if [ "$sig" -ge "-60" ]; then
     COLOR=$GREEN
@@ -205,14 +190,23 @@ while read -r line; do
 
   printf "\n\n${DARKGRAY}%-8s${NC} %-${size}s %-21s ${COLOR}%-9s${NC} ${CHANCOLOR}%-8s${NC}" "[$count]" "$net" "$mad" "$sig" "$chan"
 
-count=$(($count + 1))
-done <<< "$s"
+s="$s
+$net~$mad~$sig~$chan"
 
+count=$(($count + 1))
+done < <(sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s | tail -n +2 | sort)
 count=$(($count - 1))
+
+if [ "$count" == "0" ]; then
+  printf "${REDT}[!] ${NC}ERROR (airport failure): Please run WiFiCrack again...\n"
+  exit
+fi
+
+s="$( echo "$s" | sed '/^\s*$/d' )"
 
 printf "\n\n${GREENT}[+] ${NC}"
 read -p "Enter the number of the network you want to crack: " numberchoice
-if [[ ! $numberchoice =~ ^[0-9]+$ ]] || (( $numberchoice > $count )); then
+if [[ ! $numberchoice =~ ^[0-9]+$ ]] || [ "$numberchoice" == "0" ] || (( $numberchoice > $count )); then
   printf "${REDT}[!] ${NC}ERROR: Invalid input...\n"
   exit
 fi
