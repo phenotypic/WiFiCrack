@@ -27,7 +27,7 @@ bash ~/WiFiCrack/WiFiCrack.sh
 
 The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. After running the script, you will be asked to choose a network to crack:
 
-![Example](https://i.ibb.co/9n3JjJq/Screenshot-2018-12-06-at-14-39-57.png)
+![Example](https://i.ibb.co/bWHfBPp/Screenshot-2018-12-13-at-20-26-34.png)
 
 Following the selection of a network, you may have to wait for a while until a WPA(2) handshake is performed on the target network but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
 
