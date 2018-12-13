@@ -15,6 +15,7 @@ When running WiFiCrack for the first time, you will be asked if you want to inst
 | `./hashcat-utils/src/cap2hccapx.bin` | The WiFiCrack script will automatically install `cap2hccapx` from the GitHub [page](https://github.com/hashcat/hashcat-utils.git) if not already installed |
 | `./hashcat/hashcat` | The WiFiCrack script will automatically install `hashcat` from the GitHub [page](https://github.com/hashcat/hashcat) if not already installed |
 
+**Note:** You will also need a word list to supply to hashcat with
 
 ## Usage
 
