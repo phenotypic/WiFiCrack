@@ -27,8 +27,14 @@ bash ~/WiFiCrack/WiFiCrack.sh
 
 The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. After running the script, you will be asked to choose a network to crack:
 
-![Example](https://i.ibb.co/9n3JjJq/Screenshot-2018-12-06-at-14-39-57.png)
+![Example](https://i.ibb.co/Yyb3Fyf/Screenshot-2018-12-13-at-19-46-21.png)
 
-Following the selection of a network, you may have to wait for a while until a WPA(2) handshake is performed on the target network but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack) on the network.
+Following the selection of a network, you may have to wait for a while until a WPA(2) handshake is performed on the target network but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
 
-Once a handshake is captured, WiFiCrack will initialise hashcat in order to extract the Wi-Fi password. This step will vary in time depending on a number of factors. If the crack is successful, you will be presented with the password; otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
+Once a handshake is captured, WiFiCrack will initialise to extract the Wi-Fi password. This step may take a while depending on a number of factors. If successful, you will be presented with the password; otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
+
+## Removal
+
+```
+sudo rm -r ~/WiFiCrack
+```
