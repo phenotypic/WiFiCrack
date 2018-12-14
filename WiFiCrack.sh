@@ -51,7 +51,7 @@ if [[ "$@" == *"-h"* ]]; then
   echo "Help:"
   printf "   ${DARKGRAY}-h               ${NC}| Show this text\n"
   printf "   ${DARKGRAY}-k               ${NC}| Keep all captured packet files\n"
-  printf "   ${DARKGRAY}-a               ${NC}| Recieve an alert when cracked\n"
+  printf "   ${DARKGRAY}-a               ${NC}| Turn off successfull crack alert\n"
   printf "   ${DARKGRAY}-w <wordlist>    ${NC}| Manually define path to wordlist\n"
   printf "   ${DARKGRAY}-i <interface>   ${NC}| Manually define a Wi-Fi interface\n"
   printf "   ${DARKGRAY}-d <device>      ${NC}| Manually define devices for hashcat\n"
@@ -135,15 +135,10 @@ fi
 
 if [[ "$@" == *"-d"* ]]; then
   hashdevice="$( echo "$@" | sed -n -e 's/^.*-d //p' | cut -d\  -f1 )"
-else
-  hashdevice=""
 fi
 
 if [[ "$@" == *"-w"* ]]; then
-  long="$( echo "$@" | sed 's/-w.*//' )"
-  length="$( echo "$long" | wc -w | xargs )"
-  position=$(($length + 2))
-  wordlist=${!position}
+  wordlist="$( echo "$@" | sed -n -e "s/^.*-w //p" | sed 's/ -.*//' )"
   askwordlist="0"
   if [ ! -f $wordlist ]; then
     askwordlist="1"
@@ -190,7 +185,7 @@ while read line ; do
 
   printf "\n\n${DARKGRAY}%-8s${NC} %-${size}s %-21s ${COLOR}%-9s${NC} ${CHANCOLOR}%-8s${NC}" "[$count]" "$net" "$mad" "$sig" "$chan"
 
-s="$s
+scan="$scan
 $net~$mad~$sig~$chan"
 
 count=$(($count + 1))
@@ -202,7 +197,7 @@ if [ "$count" == "0" ]; then
   exit
 fi
 
-s="$( echo "$s" | sed '/^\s*$/d' )"
+scan="$( echo "$scan" | sed '/^\s*$/d' )"
 
 printf "\n\n${GREENT}[+] ${NC}"
 read -p "Select a network to crack (1-$count): " numberchoice
@@ -210,7 +205,7 @@ if [[ ! $numberchoice =~ ^[0-9]+$ ]] || [ "$numberchoice" == "0" ] || (( $number
   printf "${REDT}[!] ${NC}ERROR: Invalid input...\n"
   exit
 fi
-overall="$( echo "$s" | awk "FNR==$numberchoice" )"
+overall="$( echo "$scan" | awk "FNR==$numberchoice" )"
 targetnet="$( echo "$overall" | sed 's/~.*//' )"
 targetmac="$( echo "$overall" | sed -n -e "s/^.*$targetnet~//p" | sed 's/~.*//' )"
 sig="$( echo "$overall" | sed -n -e "s/^.*$targetmac~//p" | sed 's/~.*//' )"
@@ -367,7 +362,7 @@ else
   echo "$pass" | fmt -c -w $COLUMNS
   printf "${NC}"
   echo
-  if [[ "$@" == *"-a"* ]]; then
+  if [[ "$@" != *"-a"* ]]; then
     osascript -e 'display notification "Password for '"$targetnet"': '"$pass"'" with title "WiFiCrack"'
   fi
 fi
