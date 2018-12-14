@@ -19,7 +19,7 @@ The script is fairly easy to use, simply run it using the command above and ente
 | --- | --- |
 | `-h` | Help: Display all availabe flags |
 | `-k` | Keep: Keep all captured packet files |
-| `-a` | Alert: Recieve an alert when cracked |
+| `-a` | Alert: Turn off successfull crack alert |
 | `-w <wordlist>` | Wordlist: Manually define a wordlist (the script will prompt you otherwise) |
 | `-i <interface>` | Interface: Manually set Wi-Fi interface (script should normally auto-detect the correct interface) |
 | `-d <defice>` | Device: Manually define devices for hashcat |
