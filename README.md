@@ -1,5 +1,5 @@
 # WiFiCrack
-#### Wi-Fi cracker for macOS
+#### Automated Wi-Fi cracker for macOS
 
 ## What is it?
 
@@ -13,12 +13,12 @@ git clone https://github.com/Tommrodrigues/WiFiCrack
 bash ~/WiFiCrack/WiFiCrack.sh
 ```
 
-The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. Here are some flags you can add for various purposes
+The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. Here are some flags you can add for various purposes:
 
 | Flag | Description |
 | --- | --- |
 | `-h` | Help: Display all availabe flags |
-| `-k` | Keep: Keep all captured packet files |
+| `-k` | Keep: Keep all captured packet files (deleted by default at end of session) |
 | `-a` | Alert: Turn off successfull crack alert |
 | `-w <wordlist>` | Wordlist: Manually define a wordlist (the script will prompt you otherwise) |
 | `-i <interface>` | Interface: Manually set Wi-Fi interface (script should normally auto-detect the correct interface) |
@@ -34,13 +34,13 @@ Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the
 
 ## Requirements
 
-When running WiFiCrack, you will be asked to install any outstanding requirements:
+When running WiFiCrack, you will need to install any outstanding requirements:
 
 | Command | Installation |
 | --- | --- |
-| `mergecap` | This comes as part of the [Wireshark](https://www.wireshark.org) package and must be installed manually from the website. |
-| `./hashcat-utils/src/cap2hccapx.bin` | The WiFiCrack script will automatically install `cap2hccapx` from its [GitHub page](https://github.com/hashcat/hashcat-utils.git) if not already installed. |
-| `./hashcat/hashcat` | The WiFiCrack script will automatically install `hashcat` from its [GitHub page](https://github.com/hashcat/hashcat) if not already installed. |
+| `mergecap` | This comes as part of the [Wireshark](https://www.wireshark.org) application and must be installed manually from the website. |
+| `./hashcat-utils/src/cap2hccapx.bin` | The WiFiCrack script can automatically install `cap2hccapx` from its [GitHub page](https://github.com/hashcat/hashcat-utils.git) if not already installed. |
+| `./hashcat/hashcat` | The WiFiCrack script can automatically install `hashcat` from its [GitHub page](https://github.com/hashcat/hashcat) if not already installed. |
 
 **Note:** You will also need to supply a word list for hashcat
 
