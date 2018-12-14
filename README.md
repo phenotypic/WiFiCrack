@@ -13,7 +13,18 @@ git clone https://github.com/Tommrodrigues/WiFiCrack
 bash ~/WiFiCrack/WiFiCrack.sh
 ```
 
-The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. After running the script, you will be asked to choose a network to crack:
+The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. Here are some flags you can add for various purposes
+
+| Flag | Description |
+| --- | --- |
+| `-h` | Help: Display all availabe flags |
+| `-k` | Keep: Keep all captured packet files |
+| `-a` | Alert: Recieve an alert when cracked |
+| `-w <wordlist>` | Wordlist: Manually define a wordlist (the script will prompt you otherwise) |
+| `-i <interface>` | Interface: Manually set Wi-Fi interface (script should normally auto-detect the correct interface) |
+| `-d <defice>` | Device: Manually define devices for hashcat |
+
+After running the script, you will be asked to choose a network to crack:
 
 ![Example](https://i.ibb.co/bWHfBPp/Screenshot-2018-12-13-at-20-26-34.png)
 
