@@ -46,7 +46,7 @@ When running WiFiCrack, you will need to install any outstanding requirements:
 
 ## To-do list
 
-- [ ] Integrade deauthentication attack into main script
+- [ ] Integrate deauthentication attack into main script
 - [ ] Provide more `hashcat` attack options (i.e. brute force options etc.)
 
 ## Removal
