@@ -19,8 +19,13 @@ NC='\033[0m'
 ostype="$( uname -s )"
 COLUMNS=$(tput cols)
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-TERMINALCOLOUR="$( defaults read -g AppleInterfaceStyle 2>/dev/null )"
 
+if [ "$ostype" != "Darwin" ]; then
+  printf "${REDT}[!] ${NC}ERROR: This script is only designed for macOS.\n"
+  exit
+fi
+
+TERMINALCOLOUR="$( defaults read -g AppleInterfaceStyle 2>/dev/null )"
 if [[ "$TERMINALCOLOUR" == *"Dark"* ]]; then
   DARKGRAY='\033[1;37m'
   DUN='\033[1;37;4m'
@@ -56,11 +61,6 @@ if [[ "$@" == *"-h"* ]]; then
   printf "   ${DARKGRAY}-i <interface>   ${NC}| Manually define a Wi-Fi interface\n"
   printf "   ${DARKGRAY}-d <device>      ${NC}| Manually define devices for hashcat\n"
   echo
-  exit
-fi
-
-if [ "$ostype" != "Darwin" ]; then
-  printf "${REDT}[!] ${NC}ERROR: This script is only designed for macOS.\n"
   exit
 fi
 
