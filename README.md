@@ -9,7 +9,7 @@ WiFiCrack allows for the simple and efficient cracking of WPA(2)-secured network
 
 Download and run the script with:
 ```
-git clone https://github.com/Tommrodrigues/WiFiCrack
+git clone https://github.com/Tommrodrigues/WiFiCrack.git
 bash ~/WiFiCrack/WiFiCrack.sh
 ```
 
