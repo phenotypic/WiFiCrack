@@ -13,7 +13,7 @@ git clone https://github.com/Tommrodrigues/WiFiCrack.git
 bash ~/WiFiCrack/WiFiCrack.sh
 ```
 
-The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. Here are some flags you can add for various purposes:
+The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. Here are some flags you can add:
 
 | Flag | Description |
 | --- | --- |
@@ -34,7 +34,7 @@ Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the
 
 ## Requirements
 
-When running WiFiCrack, you will need to install any outstanding requirements:
+Before running WiFiCrack you must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=12) installed. Following this, you will need to install any other outstanding requirements:
 
 | Command | Installation |
 | --- | --- |
@@ -47,7 +47,7 @@ When running WiFiCrack, you will need to install any outstanding requirements:
 ## To-do list
 
 - [ ] Integrate deauthentication attack into main script
-- [ ] Provide more `hashcat` attack options (i.e. brute force options etc.)
+- [ ] Provide more `hashcat` attack options (e.g. brute force)
 
 ## Removal
 
