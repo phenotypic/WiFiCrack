@@ -30,7 +30,7 @@ After running the script, you will be asked to choose a network to crack:
 
 Following the selection of a network, you may have to wait for a while until a WPA(2) handshake occurs on the target network, but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
 
-Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the Wi-Fi password. This step may take a while, depending on a number of factors. If successful, you will be presented with the password; otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
+Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the Wi-Fi password. This step may take a while depending on a number of factors. If successful, you will be presented with the password; otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
 
 ## Requirements
 
