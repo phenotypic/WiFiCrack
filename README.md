@@ -3,7 +3,7 @@
 
 ## What is it?
 
-WiFiCrack allows for the simple and efficient cracking of WPA(2)-secured networks. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then makes use of [hashcat](https://github.com/hashcat/hashcat) for the efficient cracking of those packets in order to extract the password. The script is for educational purposes and should not be misused.
+WiFiCrack allows for the simple and efficient cracking of WPA(2) networks. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then utilises [hashcat](https://github.com/hashcat/hashcat) to efficiently attempt to extract the hashed passkey. This script is for educational purposes and should not be misused.
 
 ## Usage
 
@@ -28,9 +28,9 @@ After running the script, you will be asked to choose a network to crack:
 
 ![Example](https://i.ibb.co/bWHfBPp/Screenshot-2018-12-13-at-20-26-34.png)
 
-Following the selection of a network, you may have to wait for a while until a WPA(2) handshake occurs on the target network, but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
+Following the selection of a network, you may have to wait for a while until a handshake occurs on the target network, but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
 
-Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the Wi-Fi password. This step may take a while depending on a number of factors. If successful, you will be presented with the password; otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
+Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the Wi-Fi password. This step may take a while depending on a number of factors. If successful, you will be presented with the password. Otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
 
 ## Requirements
 
