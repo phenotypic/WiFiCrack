@@ -28,13 +28,13 @@ After running the script, you will be asked to choose a network to crack:
 
 ![Example](https://i.ibb.co/bWHfBPp/Screenshot-2018-12-13-at-20-26-34.png)
 
-Following the selection of a network, you may have to wait for a while until a handshake occurs on the target network, but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
+Following the selection of a network, you may have to wait for a while until a handshake occurs on the target network (i.e. for a device to (re)connect to the network), but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
 
-Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the Wi-Fi password. This step may take a while depending on a number of factors. If successful, you will be presented with the password. Otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
+Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the Wi-Fi password. This step may take a while depending on a number of factors including your Mac's speed. If successful, you will be presented with the password. Otherwise, WiFiCrack will retain the handshake in its directory in case you would like to perform another type of attack against the capture.
 
 ## Requirements
 
-Before running WiFiCrack you must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=12) installed. Following this, you will need to install any other outstanding requirements:
+Before running WiFiCrack you must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=12) installed. You will need to install any other outstanding requirements:
 
 | Command | Installation |
 | --- | --- |
