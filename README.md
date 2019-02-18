@@ -7,7 +7,7 @@ WiFiCrack allows for the simple and efficient cracking of WPA(2) networks. It ca
 
 ## Usage
 
-Download and run the script with:
+Before running, ensure that you have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=12) installed. After this, download and run the script with:
 ```
 git clone https://github.com/Tommrodrigues/WiFiCrack.git
 bash ~/WiFiCrack/WiFiCrack.sh
