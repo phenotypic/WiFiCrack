@@ -183,10 +183,10 @@ while read line ; do
 
   printf "\n\n${DARKGRAY}%-8s${NC} %-${size}s %-21s ${COLOR}%-9s${NC} ${CHANCOLOR}%-8s${NC}" "[$count]" "$net" "$mad" "$sig" "$chan"
 
-scan="$scan
+  scan="$scan
 $net~$mad~$sig~$chan"
 
-count=$(($count + 1))
+  count=$(($count + 1))
 done < <(sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s | tail -n +2 | sort)
 count=$(($count - 1))
 
@@ -224,10 +224,10 @@ fi
 clear
 
 convertsecs() {
- ((h=${1}/3600))
- ((m=(${1}%3600)/60))
- ((s=${1}%60))
- printf "%02d:%02d:%02d\n" $h $m $s
+  ((h=${1}/3600))
+  ((m=(${1}%3600)/60))
+  ((s=${1}%60))
+  printf "%02d:%02d:%02d\n" $h $m $s
 }
 
 if [[ "$@" != *"-k"* ]]; then
@@ -310,13 +310,13 @@ if [[ "$@" != *"-k"* ]]; then
 fi
 
 clear
-  printf "\n${BLUET}[*] ${NC}Starting hashcat in...\n"
-  sleep 1 && printf "\n3"
-  echo
-  sleep 1 && printf "\n2"
-  echo
-  sleep 1 && printf "\n1"
-  sleep 1
+printf "\n${BLUET}[*] ${NC}Starting hashcat in...\n"
+sleep 1 && printf "\n3"
+echo
+sleep 1 && printf "\n2"
+echo
+sleep 1 && printf "\n1"
+sleep 1
 clear
 
 cd ~/
