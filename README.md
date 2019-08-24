@@ -13,7 +13,7 @@ Before running WiFiCrack you must have [Xcode](https://itunes.apple.com/us/app/x
 | --- | --- |
 | `mergecap` | This comes as part of the [Wireshark](https://www.wireshark.org) application and must be installed manually from the website. |
 | `./hashcat-utils/src/cap2hccapx.bin` | The WiFiCrack script can automatically install `cap2hccapx` from its [GitHub page](https://github.com/hashcat/hashcat-utils.git) if not already installed. |
-| `./hashcat/hashcat` | The WiFiCrack script can automatically install `hashcat` from its [GitHub page](https://github.com/hashcat/hashcat) if not already installed. |
+| `hashcat` | Please manually install via [brew](https://brew.sh) by running `brew install hashcat`|
 
 **Note:** You will also need to supply a word list for hashcat
 

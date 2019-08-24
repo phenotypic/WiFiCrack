@@ -1,7 +1,6 @@
 #! /bin/bash
 
 cap2hccapxlocation="/hashcat-utils/src/cap2hccapx.bin"
-hashcatlocation="/hashcat/hashcat"
 
 GREEN='\033[0;32m'
 GREENT='\033[1;32m'
@@ -98,27 +97,9 @@ if ! [ -x "$(command -v .$cap2hccapxlocation)" ]; then
   fi
 fi
 
-if ! [ -x "$(command -v .$hashcatlocation)" ]; then
+if ! [ -x "$(command -v hashcat)" ]; then
   printf "${REDT}[!] ${NC}ERROR: Cannot execute ${DARKGRAY}hashcat${NC}."
-  printf "\n${GREENT}[+] ${NC}"
-  read -p "Would you like to install hascat now? (y/n): " ifoutput
-  if [ "$ifoutput" == "y" ] || [ "$ifoutput" == "Y" ]; then
-    cd ~/
-    git clone https://github.com/hashcat/hashcat.git
-    mkdir -p ~/hashcat/deps
-    git clone https://github.com/KhronosGroup/OpenCL-Headers.git ~/hashcat/deps/OpenCL
-    cd ~/hashcat && git submodule update --init && make && make install
-    cd ~/
-    if ! [ -x "$(command -v .$hashcatlocation)" ]; then
-      printf "\n${REDT}[!] ${NC}ERROR: Still cannot execute ${DARKGRAY}hashcat${NC}.\n\n"
-      exit
-    else
-      printf "\n${BLUET}[*] ${NC}Finished installing ${DARKGRAY}hashcat${NC}.\n\n"
-    fi
-  else
-    printf "${BLUET}[*] ${NC}To manually install, follow this gist: ${LINK}https://gist.github.com/Tommrodrigues/9a5cfbf099445475ffd30f06fee27812${NC}\n"
-    exit
-  fi
+  printf "${BLUET}[*] ${NC}To install hashcat, first install brew from: ${LINK}https://www.wireshark.org/download.html${NC}, then run \`brew install hashcat\`\n"
 fi
 
 sudo -v
@@ -322,9 +303,9 @@ clear
 cd ~/
 
 if [ -z "$hashdevice" ]; then
-  cracker="$( .$hashcatlocation -m 2500 $DIR/capture.hccapx $wordlist | tee /dev/tty | sed -e "/:$targetnet:/q" )"
+  cracker="$( hashcat -m 2500 $DIR/capture.hccapx $wordlist | tee /dev/tty | sed -e "/:$targetnet:/q" )"
 else
-  cracker="$( .$hashcatlocation -d $hashdevice -m 2500 $DIR/capture.hccapx $wordlist | tee /dev/tty | sed -e "/:$targetnet:/q" )"
+  cracker="$( hashcat -d $hashdevice -m 2500 $DIR/capture.hccapx $wordlist | tee /dev/tty | sed -e "/:$targetnet:/q" )"
 fi
 
 clear
@@ -340,9 +321,9 @@ if [ -z "$pass" ]; then
   echo "Kept handshake, crack manually with:" | fmt -c -w $COLUMNS
   printf "${DARKGRAY}"
   if [ -z "$hashdevice" ]; then
-    echo ".$hashcatlocation -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
+    echo "hashcat -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
   else
-    echo ".$hashcatlocation -d $hashdevice -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
+    echo "haschat -d $hashdevice -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
   fi
   printf "${NC}"
   echo
