@@ -7,13 +7,13 @@ WiFiCrack allows for the simple and efficient cracking of WPA(2) networks. It ca
 
 ## Prerequisites
 
-Before running WiFiCrack you must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=12) installed. You will need to install any other outstanding requirements:
+You must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=12) installed. You will need to install any other outstanding requirements:
 
 | Command | Installation |
 | --- | --- |
-| `mergecap` | This comes as part of the [Wireshark](https://www.wireshark.org) application and must be installed manually from the website. |
-| `./hashcat-utils/src/cap2hccapx.bin` | The WiFiCrack script can automatically install `cap2hccapx` from its [GitHub page](https://github.com/hashcat/hashcat-utils.git) if not already installed. |
-| `hashcat` | Please manually install via [brew](https://brew.sh) by running `brew install hashcat`|
+| `hashcat` | Manual installation: install via [brew](https://brew.sh) by running `brew install hashcat`|
+| `mergecap` | Manual installation: comes with the [Wireshark](https://www.wireshark.org) application |
+| `./hashcat-utils/src/cap2hccapx.bin` | Automatic installation option when script is run |
 
 **Note:** You will also need to supply a word list for hashcat
 
