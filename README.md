@@ -17,6 +17,8 @@ You must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=
 
 **Note:** You will also need to supply a word list for hashcat
 
+**Note:** The script has been successsfully tested with macOS Catlaina when using the `bash` shell. `zsh` may cause some problems
+
 ## Usage
 
 Download and run the script with:
