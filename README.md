@@ -12,7 +12,7 @@ You must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=
 | Command | Installation |
 | --- | --- |
 | `hashcat` | Manual installation: install via [brew](https://brew.sh) by running `brew install hashcat`|
-| `mergecap` | Manual installation: comes with the [Wireshark](https://www.wireshark.org) application |
+| `mergecap` | Manual installation: comes with the [Wireshark](https://www.wireshark.org) application (v2.6.12) |
 | `./hashcat-utils/src/cap2hccapx.bin` | Automatic installation option when script is run |
 
 **Note:** You will also need to supply a word list for hashcat
