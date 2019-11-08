@@ -126,7 +126,7 @@ else
   askwordlist="1"
 fi
 
-sudo airport -z
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -z
 
 printf "${BLUET}[*] ${NC}Scanning for Wi-Fi networks...\n"
 
@@ -240,8 +240,8 @@ cd ~/
 
 sudo -v
 
-sudo airport -z
-sudo airport -c$targetchan
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -z
+sudo /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -c$targetchan
 sudo tcpdump "type mgt subtype beacon and ether src $targetmac" -I -c 1 -i $wifiinterfacename -w $DIR/beacon.cap &>/dev/null
 printf "${BLUET}[*] ${NC}Captured beacon frame, waiting for handshake...\n\n"
 
