@@ -1,9 +1,8 @@
 # WiFiCrack
-#### Automated Wi-Fi cracker for macOS
 
 ## What is it?
 
-WiFiCrack allows for the simple and efficient cracking of WPA(2) networks. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then utilises [hashcat](https://github.com/hashcat/hashcat) to attempt to extract the hashed passkey.
+WiFiCrack is an educational demonstration of some of the security flaws associated with WPA(2) networks. It demonstrates the simple and efficient cracking of WPA(2) networks. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then utilises [hashcat](https://github.com/hashcat/hashcat) to attempt to extract the hashed passkey.
 
 ## Prerequisites
 
