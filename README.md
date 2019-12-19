@@ -1,6 +1,6 @@
 # WiFiCrack
 
-## What is it?
+## Description
 
 WiFiCrack demonstrates of some of the security flaws associated with WPA(2) networks by demonstrating simple and efficient cracking. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then utilises [hashcat](https://github.com/hashcat/hashcat) to attempt to extract the hashed passkey. The script is for educational purposes and should not be misused.
 
@@ -16,7 +16,7 @@ You must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=
 
 **Note:** You will also need to supply a word list for hashcat
 
-**Note:** The script has been successsfully tested with macOS Catlaina when using the `bash` shell. `zsh` may cause some problems
+**Note:** The script has been successfully tested with macOS Catlaina when using the `bash` shell. `zsh` may cause some problems
 
 ## Usage
 
@@ -30,9 +30,9 @@ The script is fairly easy to use, simply run it using the command above and ente
 
 | Flag | Description |
 | --- | --- |
-| `-h` | Help: Display all availabe flags |
+| `-h` | Help: Display all available flags |
 | `-k` | Keep: Keep all captured packet files (deleted at end of session by default) |
-| `-a` | Alert: Turn off successfull crack alert |
+| `-a` | Alert: Turn off successful crack alert |
 | `-w <wordlist>` | Wordlist: Manually define a wordlist path (the script will prompt you otherwise) |
 | `-i <interface>` | Interface: Manually set Wi-Fi interface (script should normally auto-detect the correct interface) |
 | `-d <device>` | Device: Manually define 'devices' for hashcat |
