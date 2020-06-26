@@ -49,9 +49,3 @@ Once a handshake is captured, WiFiCrack will initialise `hashcat` to extract the
 
 - [ ] Integrate deauthentication attack into main script
 - [ ] Provide more `hashcat` attack options (e.g. brute force)
-
-## Removal
-
-```
-sudo rm -r ~/WiFiCrack
-```
