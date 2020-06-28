@@ -20,10 +20,14 @@ You must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=
 
 ## Usage
 
-Download and run the script with:
+Download with:
 ```
 git clone https://github.com/Tommrodrigues/WiFiCrack.git
-bash ~/WiFiCrack/WiFiCrack.sh
+```
+
+Run with:
+```
+bash WiFiCrack.sh
 ```
 
 The script is fairly easy to use, simply run it using the command above and enter your `sudo` password when prompted. Here are some flags you can add:
