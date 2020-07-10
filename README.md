@@ -25,7 +25,7 @@ Download with:
 git clone https://github.com/Tommrodrigues/WiFiCrack.git
 ```
 
-Run with:
+Run from same directory with:
 ```
 bash WiFiCrack.sh
 ```
