@@ -2,7 +2,7 @@
 
 WiFiCrack demonstrates of some of the security flaws associated with WPA(2) networks by demonstrating simple and efficient cracking. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then utilises [hashcat](https://github.com/hashcat/hashcat) to attempt to extract the hashed passkey. The script is for educational purposes and should not be misused.
 
-See [WiFiCrackPy](https://github.com/Tommrodrigues/WiFiCrackPy) for a new streamlined version of this script
+See [WiFiCrackPy](https://github.com/phenotypic/WiFiCrackPy) for a new streamlined version of this script
 
 ## Prerequisites
 
@@ -22,7 +22,7 @@ You must have [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?l=en&mt=
 
 Download with:
 ```
-git clone https://github.com/Tommrodrigues/WiFiCrack.git
+git clone https://github.com/phenotypic/WiFiCrack.git
 ```
 
 Run from same directory with:
