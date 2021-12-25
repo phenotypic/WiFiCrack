@@ -45,7 +45,6 @@ cat << "EOF"
                  \  /\  /  | | |    | | |____| | | (_| | (__|   <
                   \/  \/   |_|_|    |_|\_____|_|  \__,_|\___|_|\_\
 
-     GitHub : https://github.com/phenotypic/WiFiCrack
 
 EOF
 
