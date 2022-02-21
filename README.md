@@ -41,9 +41,7 @@ The script is fairly easy to use, simply run it using the command above and ente
 | `-i <interface>` | Interface: Manually set Wi-Fi interface (script should normally auto-detect the correct interface) |
 | `-d <device>` | Device: Manually define 'devices' for hashcat |
 
-After running the script, you will be asked to choose a network to crack:
-
-![Example](https://i.ibb.co/bWHfBPp/Screenshot-2018-12-13-at-20-26-34.png)
+After running the script, you will be asked to choose a network to crack.
 
 Following the selection of a network, you may have to wait for a while until a handshake occurs on the target network (i.e. for a device to (re)connect to the network), but this can be hastened by performing a [deauthentication attack](https://en.wikipedia.org/wiki/Wi-Fi_deauthentication_attack).
 
