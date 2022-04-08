@@ -322,7 +322,7 @@ if [ -z "$pass" ]; then
   if [ -z "$hashdevice" ]; then
     echo "hashcat -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
   else
-    echo "haschat -d $hashdevice -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
+    echo "hashcat -d $hashdevice -m 2500 $DIR/capture.hccapx $wordlist" | fmt -c -w $COLUMNS
   fi
   printf "${NC}"
   echo
