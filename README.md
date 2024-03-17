@@ -1,6 +1,6 @@
 # WiFiCrack
 
-#### Not actively maintained. See [WiFiCrackPy](https://github.com/phenotypic/WiFiCrackPy) for an updated version of this script.
+#### This repository is not actively maintained. See [WiFiCrackPy](https://github.com/phenotypic/WiFiCrackPy) for an updated version of this project.
 
 WiFiCrack demonstrates of some of the security flaws associated with WPA(2) networks by demonstrating simple and efficient cracking. It captures the necessary Wi-Fi packets associated with with WPA(2) handshakes and then utilises [hashcat](https://github.com/hashcat/hashcat) to attempt to extract the hashed passkey. The script is for educational purposes and should not be misused.
 
